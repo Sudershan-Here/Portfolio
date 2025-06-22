@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sudershan Sigdel</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #00ff88;
+      --bg-dark: #111;
+      --text-light: #fff;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      padding: 100px 20px 60px;
+      text-align: center;
+      background: linear-gradient(to right, #000000, #1e1e1e);
+      position: relative;
+    }
+
+    /* Crack Wrapper */
+    .crack-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 20px var(--primary);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .profile-pic:hover {
+      animation: crackEffect 0.6s ease-in-out forwards;
+      filter: contrast(1.4) brightness(1.2) grayscale(0.2);
+      box-shadow: 0 0 25px red, 0 0 50px red;
+    }
+
+    .glass-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 140px;
+      height: 140px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+    }
+
+    .crack-wrapper:hover .glass-overlay {
+      opacity: 1;
+    }
+
+    @keyframes crackEffect {
+      0% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.05) rotate(2deg) translateX(-2px); }
+      50% { transform: scale(0.95) rotate(-2deg) translateX(2px); }
+      75% { transform: scale(1.03) rotate(1deg) translateX(-1px); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid var(--primary);
+      font-size: 1.3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.8s infinite;
+    }
+
+    @keyframes typing {
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .btn-custom, .btn-resume {
+      background-color: var(--primary);
+      color: #000;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+      margin: 5px;
+    }
+
+    .btn-custom:hover, .btn-resume:hover {
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .card-custom {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      color: #eee;
+      transition: transform 0.3s ease;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+    }
+
+    .project-card {
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: #1a1a1a;
+      box-shadow: 0 0 0 2px #333;
+      transition: all 0.4s ease;
+      padding: 10px;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 0 15px 2px red;
+      transform: scale(1.02);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #0d0d0d;
+      padding: 40px 20px;
+      text-align: center;
+      color: #888;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      background: var(--primary);
+      color: #000;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--primary);
+      z-index: 999;
+    }
+
+    #scrollTopBtn:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero" data-aos="fade-up">
+    <div class="crack-wrapper">
+      <img src="sdr portfolio pic.png" alt="Sudershan Sigdel" class="profile-pic" />
+      <img src="https://i.ibb.co/9wJbsmc/cracked-glass.png" class="glass-overlay" alt="Cracked Glass" />
+    </div>
+    <h1>Sudershan Sigdel</h1>
+    <div class="typewriter">Creative Idea Maker & Guffadi</div>
+    <p class="mt-4">Guiding you through the world of IT, tech, and creative thinking.</p>
+    <a href="#contact" class="btn btn-custom">Let’s Connect</a>
+    <a href="sdrcv.docx" class="btn btn-resume" download>📄 Download Resume</a>
+  </div>
+
+  <!-- About Me -->
+  <section data-aos="fade-right">
+    <div class="container text-center">
+      <div class="section-title">About Me</div>
+      <p class="lead">
+        I’m here to support your journey towards mastering technology and achieving career success.
+        My role is to guide you through the complexities of IT, making learning engaging and effective.
+      </p>
+    </div>
+  </section>
+
+  <!-- What I Offer -->
+  <section data-aos="fade-left">
+    <div class="container">
+      <div class="section-title">What I Offer</div>
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="card card-custom p-4">
+            <h5>💡 Creative Ideas</h5>
+            <p>Unique tech content, strategies, and innovation for digital growth.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card card-custom p-4">
+            <h5>🎙️ Guff</h5>
+            <p>Tech talks, motivational ideas, and real-world experiences with a twist.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card card-custom p-4">
+            <h5>📈 Career Guidance</h5>
+            <p>Helping you level up your IT skills and navigate career paths.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section data-aos="zoom-in">
+    <div class="container">
+      <div class="section-title">Portfolio</div>
+      <div class="row portfolio g-4">
+        <!-- 6 Projects -->
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="FOX.png" alt="Project 1" />
+            <p class="text-center mt-2">Project 1: Sandeep Sigdel Logo</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="dragon.png" alt="Project 2" />
+            <p class="text-center mt-2">Project 2: Aayush Adhikari Logo</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="meme.png" alt="Project 3" />
+            <p class="text-center mt-2">Project 3: My Own Company Logo</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="yt banner.png" alt="Project 4" />
+            <p class="text-center mt-2">Project 4: YT Banner</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="dragonfc.png" alt="Project 5" />
+            <p class="text-center mt-2">Project 5: Aayush Adhikari YT Banner</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="poster.png" alt="Project 6" />
+            <p class="text-center mt-2">Project 6: Football Poster</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" data-aos="fade-up">
+    <div class="container">
+      <div class="section-title">Contact Me</div>
+      <div class="text-center">
+        <p>📧 <a href="mailto:sudershanaura44@gmail.com">sudershanaura44@gmail.com</a></p>
+        <p>📘 <a href="https://www.facebook.com/SUDERSH4N.XE.777" target="_blank">Facebook Profile</a></p>
+        <p>▶️ <a href="https://www.youtube.com/watch?v=O6Pw9h0aZb0&pp=ygUIVG9yaSBneXo%3D" target="_blank">My YouTube Video</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer data-aos="fade-in">
+    &copy; 2025 Sudershan Sigdel. Designed with 💚 in Nepal.
+  </footer>
+
+  <!-- Scroll-to-Top Button -->
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200 });
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      scrollBtn.style.display = (window.scrollY > 300) ? "block" : "none";
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
