@@ -31,12 +31,6 @@
       position: relative;
     }
 
-    /* Crack Wrapper */
-    .crack-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-
     .profile-pic {
       width: 140px;
       height: 140px;
@@ -45,37 +39,6 @@
       border: 4px solid var(--primary);
       box-shadow: 0 0 20px var(--primary);
       margin-bottom: 20px;
-      transition: all 0.3s ease;
-      z-index: 1;
-    }
-
-    .profile-pic:hover {
-      animation: crackEffect 0.6s ease-in-out forwards;
-      filter: contrast(1.4) brightness(1.2) grayscale(0.2);
-      box-shadow: 0 0 25px red, 0 0 50px red;
-    }
-
-    .glass-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 140px;
-      height: 140px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: 2;
-    }
-
-    .crack-wrapper:hover .glass-overlay {
-      opacity: 1;
-    }
-
-    @keyframes crackEffect {
-      0% { transform: scale(1) rotate(0deg); }
-      25% { transform: scale(1.05) rotate(2deg) translateX(-2px); }
-      50% { transform: scale(0.95) rotate(-2deg) translateX(2px); }
-      75% { transform: scale(1.03) rotate(1deg) translateX(-1px); }
-      100% { transform: scale(1) rotate(0deg); }
     }
 
     .hero h1 {
@@ -159,8 +122,6 @@
       width: 100%;
       border-radius: 10px;
       transition: transform 0.3s ease;
-      height: 200px;
-      object-fit: cover;
     }
 
     .project-card img:hover {
@@ -208,15 +169,12 @@
 
   <!-- Hero Section -->
   <div class="hero" data-aos="fade-up">
-    <div class="crack-wrapper">
-      <img src="sdr portfolio pic.png" alt="Sudershan Sigdel" class="profile-pic" />
-      <img src="https://i.ibb.co/9wJbsmc/cracked-glass.png" class="glass-overlay" alt="Cracked Glass" />
-    </div>
+    <img src="sdr portfolio pic.png" alt="Sudershan Sigdel" class="profile-pic" />
     <h1>Sudershan Sigdel</h1>
     <div class="typewriter">Creative Idea Maker & Guffadi</div>
     <p class="mt-4">Guiding you through the world of IT, tech, and creative thinking.</p>
     <a href="#contact" class="btn btn-custom">Let’s Connect</a>
-    <a href="sdrcv.docx" class="btn btn-resume" download>📄 Download Resume</a>
+    <a href="sudershan_resume.pdf" class="btn btn-resume" download>📄 Download Resume</a>
   </div>
 
   <!-- About Me -->
@@ -257,46 +215,45 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- Portfolio (6 Projects with curved red glow) -->
   <section data-aos="zoom-in">
     <div class="container">
       <div class="section-title">Portfolio</div>
       <div class="row portfolio g-4">
-        <!-- 6 Projects -->
         <div class="col-md-4">
           <div class="project-card">
-            <img src="FOX.png" alt="Project 1" />
-            <p class="text-center mt-2">Project 1: Sandeep Sigdel Logo</p>
+            <img src="https://source.unsplash.com/600x400/?technology,project1" alt="Project 1" />
+            <p class="text-center mt-2">Project 1: AI Web Assistant</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="project-card">
-            <img src="dragon.png" alt="Project 2" />
-            <p class="text-center mt-2">Project 2: Aayush Adhikari Logo</p>
+            <img src="https://source.unsplash.com/600x400/?coding,project2" alt="Project 2" />
+            <p class="text-center mt-2">Project 2: Portfolio Website</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="project-card">
-            <img src="meme.png" alt="Project 3" />
-            <p class="text-center mt-2">Project 3: My Own Company Logo</p>
+            <img src="https://source.unsplash.com/600x400/?design,project3" alt="Project 3" />
+            <p class="text-center mt-2">Project 3: Creative UI Kit</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="project-card">
-            <img src="yt banner.png" alt="Project 4" />
-            <p class="text-center mt-2">Project 4: YT Banner</p>
+            <img src="https://source.unsplash.com/600x400/?programming,project4" alt="Project 4" />
+            <p class="text-center mt-2">Project 4: Task Manager App</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="project-card">
-            <img src="dragonfc.png" alt="Project 5" />
-            <p class="text-center mt-2">Project 5: Aayush Adhikari YT Banner</p>
+            <img src="https://source.unsplash.com/600x400/?software,project5" alt="Project 5" />
+            <p class="text-center mt-2">Project 5: Code Snippet Hub</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="project-card">
-            <img src="poster.png" alt="Project 6" />
-            <p class="text-center mt-2">Project 6: Football Poster</p>
+            <img src="https://source.unsplash.com/600x400/?innovation,project6" alt="Project 6" />
+            <p class="text-center mt-2">Project 6: Blog CMS Platform</p>
           </div>
         </div>
       </div>
@@ -328,6 +285,8 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1200 });
+
+    // Scroll to top logic
     const scrollBtn = document.getElementById("scrollTopBtn");
     window.onscroll = function () {
       scrollBtn.style.display = (window.scrollY > 300) ? "block" : "none";
